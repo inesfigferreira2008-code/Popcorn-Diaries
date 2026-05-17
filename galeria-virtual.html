@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logosemfundo.png">
+    <title>Galerias Virtuais</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_galeria.css">
+</head>
+<body>
+
+<!-- CLAQUETE -->
+<div class="topo-claquete">
+    <img src="img/claquete.PNG" alt="Claquete">
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="index.html" class="logo">
+        <img src="img/logosemfundo.png" alt="Ícone" class="menu-icon">
+    </a>
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+            <ul>
+                <li><a href="galeria-virtual.html">Galerias Virtuais</a></li>
+            <li><a href="ebook.html">E-book</a></li>
+            <li><a href="fotos-videos.html">Fotos e vídeos</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="infograficos.html">Infográficos</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+            </ul>
+</div>
+
+<div class="conteudo">
+
+ <!-- TÍTULO -->
+
+    <section class="galeria-topo">
+        <br>
+        <br>
+        <h1>Galerias Virtuais</h1>
+
+        <p>
+            Explora os nossos espaços interativos e descobre
+            conteúdos visuais relacionados com cinema,
+            criatividade e storytelling. Viaja pela nossa galeria 3D como se estivesses num museu!
+        </p>
+
+    </section>
+
+
+    <!-- BOTÕES -->
+
+    <section class="galeria-botoes"> 
+
+        <!-- GALERIA 2D -->
+        <a href="https://prezi.com/view/5r9sk3apHREcF2Fvu1sU/?referral_token=eBeURslnB3FN"
+           class="galeria-btn"
+           target="_blank">
+
+            Explorar Galeria 2D
+
+        </a>
+
+        <!-- GALERIA 3D -->
+        <a href="https://visit.virtualartgallery.com/popcorndiaries3dgaleria"
+           class="galeria-btn"
+           target="_blank">
+
+            Explorar Galeria 3D
+
+        </a>
+
+    </section>
+
+
+    <!-- PREVIEW PREZI -->
+
+    <section class="preview-section">
+
+        <h2>Pré-visualização da Galeria 2D</h2>
+
+        <div class="preview-container">
+
+           <iframe src="https://prezi.com/p/embed/5r9sk3apHREcF2Fvu1sU/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="315" width="560"></iframe>
+
+        </div>
+
+    </section>
+
+    <section class="preview-section">
+
+        <h2>Pré-visualização da Galeria 3D</h2>
+
+        <div class="preview-container">
+
+           <iframe width="70%" height="200%" frameborder="0" allowfullscreen allow="accelerometer;autoplay;fullscreen;gyroscope;magnetometer;xr-spatial-tracking" src="https://visit.virtualartgallery.com/17cd6151-a31c-4c56-b622-c598544c616d"></iframe>
+
+        </div>
+
+    </section>
+</div>
+
+<!-- MENU -->
+<div id="accessibility-menu">
+
+    <h3>Acessibilidade</h3>
+
+    <button onclick="changeFontSize(1)">Aumentar texto</button>
+    <button onclick="changeFontSize(-1)">Diminuir texto</button>
+    <button onclick="toggleContrast()">Alto contraste</button>
+    <button onclick="toggleGrayscale()">Escala de cinzentos</button>
+    <button onclick="toggleReadableFont()">Fonte legível</button>
+    <button onclick="readPage()">Narrador</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <!-- COLUNA 1 -->
+        <div class="footer-column">
+            <h3>Popcorn Diaries.</h3>
+            <p style="text-align: justify;">
+                Projeto multimédia que une cinema, criatividade e comunicação, dedicado à análise cinematográfica e à exploração de diferentes ferramentas digitais.
+            </p>
+        </div>
+
+        <!-- COLUNA 2 -->
+        <div class="footer-column">
+            <h3>Redes Sociais</h3>
+            <p>
+                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/popcorndiaries__?igsh=d3pmbnhlYXU3NHZ1"
+                   target="_blank">
+                    @popcorndiaries__
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-brands fa-youtube"></i>
+
+                <a href="https://youtube.com/@popcorndiariesproject?si=hXlB0gcvYZf93ts5"
+                   target="_blank">
+                    @popcorndiariesproject
+                </a>
+            </p>
+            <p> 
+                <i class="fa-brands fa-spotify"></i>
+                <a href="https://open.spotify.com/user/31ylsrlncucxu7nv7bzjlcrqvonq?si=8SZ5fJ6fSLucdKMSXK7K2A"
+                   target="_blank">
+                    @PopcornDiaries
+                </a>
+            </p>
+        </div>
+
+        <!-- COLUNA 3 -->
+        <div class="footer-column">
+            <h3>Contactos</h3>
+            <p>Email: <a id="footer-email" href="mailto:popcorndiaries.project@gmail.com">popcorndiaries.project@gmail.com</a></p>
+            <p>Lisboa, Portugal</p>
+        </div>
+
+        <!-- COLUNA 4 -->
+        <div class="footer-column">
+
+            <h3>Links Rápidos</h3>
+
+            <p><a href="index.html">Início</a></p>
+
+            <p><a href="sobre-nos.html">Sobre Nós</a></p>
+
+            <p><a href="ajuda.html">Ajuda</a></p>
+
+            <p><a href="faq.html">FAQ</a></p>
+        </div>
+    </div>
+
+    <!-- PARTE FINAL -->
+    <div class="footer-bottom">
+
+        © 2026 Popcorn Diaries.
+        Estes conteúdos estão licenciados sob a licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >CC BY-NC-SA 4.0</a>.
+
+        
+    </div>
+</footer>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="script.js"></script>
+</body>
+</html>

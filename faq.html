@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logosemfundo.png">
+    <title>Popcorn Diaries</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_index.css">
+</head>
+<body>
+
+<div id="page-content">
+<!-- CLAQUETE -->
+<div class="topo-claquete">
+    <img src="img/claquete.PNG" alt="Claquete">
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="index.html" class="logo">
+        <img src="img/logosemfundo.png" alt="Ícone" class="menu-icon">
+    </a>
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+            <ul>
+                <li><a href="galeria-virtual.html">Galerias Virtuais</a></li>
+            <li><a href="ebook.html">E-book</a></li>
+            <li><a href="fotos-videos.html">Fotos e vídeos</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="infograficos.html">Infográficos</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+            </ul>
+</div>
+
+<!-- FAQ -->
+<!-- FAQ -->
+
+<style>
+
+.faq-container{
+    max-width:900px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.faq-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#990011;
+    font-size:40px;
+}
+
+.faq-item{
+    background:white;
+    margin-bottom:20px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.faq-question{
+    width:100%;
+    background:white;
+    border:none;
+    padding:25px;
+    text-align:left;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.faq-question span{
+    font-size:28px;
+    color:#990011;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    background:#fafafa;
+    padding:0 25px;
+}
+
+.faq-answer p{
+    padding:20px 0;
+    color:#333;
+    line-height:1.7;
+}
+
+.faq-item.active .faq-answer{
+    max-height:300px;
+}
+
+</style>
+
+<div class="faq-container">
+
+    <h1 class="faq-title">
+        Frequently Asked Questions
+    </h1>
+
+    <div class="faq-item">
+
+        <button class="faq-question">
+            O que é este projeto?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                O Popcorn Diaries é um projeto multimédia que une cinema, criatividade e comunicação, dedicado à análise cinematográfica e à exploração de diferentes ferramentas digitais.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="faq-item">
+
+        <button class="faq-question">
+            Quem criou o website?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                O website e todos os conteúdos do universo do Popcorn Diaries foi desenvolvido pelas alunas Ariadna, Inês e Íris, no âmbito da disciplina de Aplicações Informáticas B.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="faq-item">
+
+        <button class="faq-question">
+            Posso utilizar as imagens do site?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Sim. As imagens e conteúdos podem ser utilizados desde que seja dado o devido crédito ao projeto original, não sejam usados para fins comerciais e qualquer adaptação ou alteração seja partilhada sob a mesma licença Creative Commons.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="faq-item">
+
+        <button class="faq-question">
+            Como posso entrar em contacto?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Na nossa aba da "Ajuda" podes encontrar um formulário de contacto. Podes também enviar um email diretamente para o nosso endereço de email (popcorndiaries.project@gmail.com) ou contactar-nos através das nossas redes sociais.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="faq-item">
+
+        <button class="faq-question">
+            O website funciona no telemóvel?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Sim, o nosso website é responsivo, ou seja, adapta-se a diferentes tamanhos de ecrã, incluindo telemóveis e tablets, para garantir uma experiência de navegação agradável em qualquer dispositivo.
+            </p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const perguntas = document.querySelectorAll(".faq-question");
+
+perguntas.forEach(pergunta => {
+
+    pergunta.addEventListener("click", () => {
+
+        const item = pergunta.parentElement;
+
+        item.classList.toggle("active");
+
+    });
+
+});
+
+</script>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <!-- COLUNA 1 -->
+        <div class="footer-column">
+            <h3>Popcorn Diaries.</h3>
+            <p style="text-align: justify;">
+                Projeto multimédia que une cinema, criatividade e comunicação, dedicado à análise cinematográfica e à exploração de diferentes ferramentas digitais.
+            </p>
+        </div>
+
+        <!-- COLUNA 2 -->
+        <div class="footer-column">
+            <h3>Redes Sociais</h3>
+            <p>
+                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/popcorndiaries__?igsh=d3pmbnhlYXU3NHZ1"
+                   target="_blank">
+                    @popcorndiaries__
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-brands fa-youtube"></i>
+
+                <a href="https://youtube.com/@popcorndiariesproject?si=hXlB0gcvYZf93ts5"
+                   target="_blank">
+                    @popcorndiariesproject
+                </a>
+            </p>
+            <p> 
+                <i class="fa-brands fa-spotify"></i>
+                <a href="https://open.spotify.com/user/31ylsrlncucxu7nv7bzjlcrqvonq?si=8SZ5fJ6fSLucdKMSXK7K2A"
+                   target="_blank">
+                    @PopcornDiaries
+                </a>
+            </p>
+        </div>
+
+        <!-- COLUNA 3 -->
+        <div class="footer-column">
+            <h3>Contactos</h3>
+            <p>Email: <a id="footer-email" href="mailto:popcorndiaries.project@gmail.com">popcorndiaries.project@gmail.com</a></p>
+            <p>Lisboa, Portugal</p>
+        </div>
+
+        <!-- COLUNA 4 -->
+        <div class="footer-column">
+
+            <h3>Links Rápidos</h3>
+
+            <p><a href="index.html">Início</a></p>
+
+            <p><a href="sobre-nos.html">Sobre Nós</a></p>
+
+            <p><a href="ajuda.html">Ajuda</a></p>
+
+            <p><a href="faq.html">FAQ</a></p>
+        </div>
+    </div>
+
+    <!-- PARTE FINAL -->
+    <div class="footer-bottom">
+
+        © 2026 Popcorn Diaries.
+        Estes conteúdos estão licenciados sob a licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >CC BY-NC-SA 4.0</a>.
+
+        
+    </div>
+</footer>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</body>
+</html>
+
+
+
+

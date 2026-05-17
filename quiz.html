@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logosemfundo.png">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CLAQUETE -->
+<div class="topo-claquete">
+    <img src="img/claquete.PNG" alt="Claquete">
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="index.html" class="logo">
+        <img src="img/logosemfundo.png" alt="Ícone" class="menu-icon">
+    </a>
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+            <ul>
+                <li><a href="galeria-virtual.html">Galerias Virtuais</a></li>
+            <li><a href="ebook.html">E-book</a></li>
+            <li><a href="fotos-videos.html">Fotos e vídeos</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="infograficos.html">Infográficos</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+            </ul>
+</div>
+
+<div class="intro">    
+    <h1>Qual o teu estilo de filme?</h1>
+    <p>Bem vindos ao nosso quiz de personalidade!</p>
+    <p>Aqui, vais descobrir qual o estilo de filme que mais se adapta a ti, de acordo com tuas respostas a dez perguntas. Responde com sinceridade e diverte-te a descobrir o teu estilo de filme ideal! As categorias neste quiz são: <strong> Ação, Comédia Romântica, Drama, Terror e Ficção Científica.</strong>  </p>
+    <p>Cada resposta que escolheres irá contribuir para determinar o teu estilo de filme predominante. No final do quiz, revelaremos o resultado com uma descrição do teu estilo de filme. Vamos começar! </p>
+  </div>
+
+  <div class="container">
+
+  <!-- QUIZ -->
+  <div id="quiz">
+    <div class="question">
+      <h2 id="question-text"></h2>
+      <div class="options" id="options"></div>
+    </div>
+
+    <div class="buttons">
+      <button id="QuizPrevBtn">Anterior</button>
+      <button id="QuizNextBtn" disabled>Seguinte</button>
+    </div>
+  </div>
+
+  <!-- RESULTADO -->
+  <div id="result" class="hidden">
+  <h2>Resultado</h2>
+
+  <!-- Vencedor -->
+  <p id="result-text"></p>
+  <p id="result-description"></p>
+
+  <h3>Pódio</h3>
+  <ol id="podium"></ol>
+
+  <button id="restartBtn">Recomeçar quiz</button>
+</div>
+</div>
+  
+
+<script>
+  const questions = [
+    {
+      question: "1. Como seria para ti uma noite ideal?",
+      options: [
+        { text: "uma conversa profunda", category: "drama" },
+        { text: "um evento desportivo", category: "acao" },
+        { text: "passear por um local desconhecido", category: "terror" },
+        { text: "uma troca de ideias sobre temas inovadores", category: "ficcao_cientifica" },
+        { text: "um jantar com alguém especial", category: "comedia_romantica" },      
+      ]
+    },
+    {
+      question: "2. Estás sozinh@ em casa, o que vais fazer?",
+      options: [
+        { text: "Ouvir música triste", category: "drama" },
+        { text: "cozinhar a ouvir música", category: "comedia_romantica" },
+        { text: "Jogar um videojogo intenso", category: "acao" },
+        { text: "trabalhar nalgum projeto", category: "ficcao_cientifica" },
+        { text: "apagar todas as luzes e ver um filme", category: "terror" }
+      ]
+    },
+    {
+      question: "3. Onde gostarias mais de viver?",
+      options: [
+        { text: "cidade histórica", category: "drama" },
+        { text: "cidade charmosa, tipo Paris", category: "comedia_romantica" },
+        { text: "metrópole movimentada", category: "acao" },
+        { text: "cidade futurista", category: "ficcao_cientifica" },
+        { text: "cidade isolada", category: "terror" }
+      ]
+    },
+    {
+      question: "4. Qual o teu tipo de música favorito?",
+      options: [
+        { text: "música clássica", category: ["drama", "terror"] },
+        { text: "pop", category: "comedia_romantica" },
+        { text: "rock", category: "acao" },
+        { text: "eletrónica", category: "ficcao_cientifica" },
+      ]
+    },
+    {
+      question: "5. Quando vês um filme, o que mais te prende?",
+      options: [
+        { text: "as ideias e conceitos inovadores", category: "ficcao_cientifica" },
+        { text: "as relações entre os personagens", category: "comedia_romantica" },
+        { text: "as emoções e os conflitos dos personagens", category: "drama" },
+        { text: "o suspense e tensão", category: "terror" },
+        { text: "as cenas intensas e o ritmo rápido", category: "acao" }
+      ]
+    },
+    {
+      question: "6. Se pudesses escolher um superpoder, qual seria?",
+      options: [
+        { text: "super-velocidade", category: "acao" },
+        { text: "invisibilidade", category: "terror" },
+        { text: "ler-mentes", category: "drama" },
+        { text: "controlar o tempo", category: "ficcao_cientifica" },
+        { text: "falar com animais", category: "comedia_romantica" }
+      ]
+    },
+    {
+      question: "7. Qual destas situações te parece mais interessante?",
+      options: [
+        { text: "Um encontro que muda a vida de alguém", category: "drama" },
+        { text: "Um acaso que leva a uma história de amor", category: "comedia_romantica" },
+        { text: "Uma missão perigosa contra o tempo", category: "acao" },
+        { text: "Uma descoberta que muda a humanidade", category: "ficcao_cientifica" },
+        { text: "Algo estranho que acontece inexplicavelmente", category: "terror" }
+      ]
+    },
+    {
+      question: "8. Qual destas frases descreve melhor a tua personalidade?",
+      options: [
+        { text: "Sou otimista e acredito no amor", category: "comedia_romantica" },
+        { text: "Sou intens@ e sinto tudo profundamente", category: "drama" },
+        { text: "Sou cautelos@ e atent@", category: "terror" },
+        { text: "Sou curios@ e adoro descobrir coisas novas", category: "ficcao_cientifica" },
+        { text: "Gosto de desafios e emoção", category: "acao" },
+      ]
+    },
+    {
+      question: "9. Se a tua vida fosse um filme, como seria?",
+      options: [
+        { text: "Uma viagem cheia de perguntas sobre o futuro", category: "ficcao_cientifica" },
+        { text: "Um retrato emocional cheio de altos e baixos", category: "drama" },
+        { text: "Um suspense cheio de mistério", category: "terror" },
+        { text: "Uma história leve e com momentos divertidos", category: "comedia_romantica" },
+        { text: "Uma aventura cheia de obstáculos", category: "acao" }
+      ]
+    },
+    {
+      question: "10. Como reages quando algo inesperado acontece?",
+      options: [
+        { text: "Reajo rapidamente e passo à ação", category: "acao" },
+        { text: "Tento raciocinar sobre o que se passa", category: "ficcao_cientifica" },
+        { text: "Fico alerta, à espera do pior", category: "terror" },
+        { text: "Tento aliviar o clima e manter a calma", category: "comedia_romantica" },
+        { text: "Ajo de forma emocional e empática", category: "drama" },
+      ]
+    }
+  ];
+
+  let currentQuestion = 0;
+  let answers = Array(questions.length).fill(null);
+
+  const scores = {
+    drama: 0,
+    comedia_romantica: 0,
+    acao: 0,
+    ficcao_cientifica: 0,
+    terror: 0
+  };
+
+  const questionText = document.getElementById("question-text");
+  const optionsDiv = document.getElementById("options");
+  const QuizNextBtn = document.getElementById("QuizNextBtn");
+  const QuizPrevBtn = document.getElementById("QuizPrevBtn");
+
+  function loadQuestion() {
+    const q = questions[currentQuestion];
+    questionText.textContent = q.question;
+    optionsDiv.innerHTML = "";
+
+    q.options.forEach((option) => {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "option";
+
+      const optionCats = Array.isArray(option.category) ? option.category : [option.category];
+
+      if (answers[currentQuestion] &&
+          JSON.stringify(answers[currentQuestion]) === JSON.stringify(optionCats)) {
+        input.checked = true;
+        QuizNextBtn.disabled = false;
+      }
+
+      input.addEventListener("change", () => {
+        answers[currentQuestion] = optionCats;
+        QuizNextBtn.disabled = false;
+      });
+
+      label.appendChild(input);
+      label.append(" " + option.text);
+      optionsDiv.appendChild(label);
+    });
+
+    QuizPrevBtn.disabled = currentQuestion === 0;
+    QuizNextBtn.textContent = currentQuestion === questions.length - 1 ? "Ver resultado" : "Seguinte";
+    QuizNextBtn.disabled = answers[currentQuestion] === null;
+  }
+
+  QuizNextBtn.addEventListener("click", () => {
+    if (currentQuestion < questions.length - 1) {
+      currentQuestion++;
+      loadQuestion();
+    } else {
+      showResult();
+    }
+  });
+
+  QuizPrevBtn.addEventListener("click", () => {
+    currentQuestion--;
+    loadQuestion();
+  });
+
+  function formatCategoryName(category) {
+    const names = {
+      drama: "Drama",
+      comedia_romantica: "Comédia Romântica",
+      acao: "Ação",
+      ficcao_cientifica: "Ficção Científica",
+      terror: "Terror"
+    };
+    return names[category] || category;
+  }
+
+  function formatPoints(points) {
+    return points === 1 ? '1 ponto' : `${points || 0} pontos`;
+  }
+
+  const categoryDescriptions = {
+    drama: "És uma pessoa sensível e profunda, que valoriza as emoções e as relações humanas. Gostas de histórias que exploram os sentimentos e os conflitos dos personagens, e tens uma empatia natural para com os outros. Adoras ver personagens a enfrentarem desafios emocionais e a crescerem através das suas experiências. ",
+    comedia_romantica: "Gostas de histórias emocionantes e românticas, com personagens bem desenvolvidos e enredos envolventes. Adoras ver personagens a desenvolverem relações amorosas e a enfrentarem desafios emocionais em conjunto ou uns pelos outros.",
+    acao: "És fã de adrenalina e emoção! Gostas de histórias cheias de ação, com ritmo acelerado e cenas intensas. Adoras ver personagens a enfrentar desafios e a superar obstáculos, e gostas de sentir a emoção de cada momento.",
+    ficcao_cientifica: "Tens uma mente curiosa e criativa, sempre à procura de novas ideias e conceitos. Adoras explorar o desconhecido e imaginar futuros possíveis. Gostas de pensar sobre o impacto da tecnologia e da ciência na sociedade, e tens um interesse especial por temas como inteligência artificial, viagens no tempo ou universos paralelos.",
+    terror: "Tens um espírito corajoso e uma mente aberta a novas experiências. Gostas de histórias que te façam sentir tensão e medo, mas que também te façam pensar e refletir sobre o desconhecido. Adoras explorar os mistérios da mente humana e os limites do que é possível, e tens um interesse especial por temas como o sobrenatural, o paranormal ou o psicológico."
+  };
+
+  function showResult() {
+
+    // Resetar pontuações
+    for (let key in scores) {
+      scores[key] = 0;
+    }
+
+    // Contar pontos (agora suporta arrays)
+    answers.forEach(catArray => {
+      if (catArray) {
+        catArray.forEach(cat => {
+          if (scores.hasOwnProperty(cat)) {
+            scores[cat]++;
+          }
+        });
+      }
+    });
+
+    const maxScore = Math.max(...Object.values(scores));
+    const winners = Object.keys(scores).filter(cat => scores[cat] === maxScore);
+
+    document.getElementById("quiz").classList.add("hidden");
+    document.getElementById("result").classList.remove("hidden");
+
+    const formattedWinners = winners.map(cat => formatCategoryName(cat));
+    document.getElementById("result-text").textContent =
+      "O teu estilo de filme é: " + formattedWinners.join(" e ");
+
+    let descriptionText = "";
+
+    if (winners.length === 1) {
+      descriptionText = categoryDescriptions[winners[0]];
+    } else {
+      const formatted = winners.map(cat => formatCategoryName(cat));
+      descriptionText =
+        "Tens uma personalidade equilibrada entre " +
+        formatted.join(" e ") +
+        ". Mostras características fortes de ambas as categorias.";
+    }
+
+    const resultDescriptionEl = document.getElementById("result-description");
+    if (resultDescriptionEl) {
+      resultDescriptionEl.textContent = descriptionText;
+    }
+
+    // PÓDIO
+    const sortedCategories = Object.entries(scores)
+      .sort((a, b) => b[1] - a[1]);
+
+    const podium = document.getElementById("podium");
+    podium.innerHTML = "";
+
+    sortedCategories.forEach(([category, points]) => {
+      const li = document.createElement("li");
+      li.textContent = `${formatCategoryName(category)} — ${formatPoints(points)}`;
+      podium.appendChild(li);
+    });
+  }
+
+  const restartBtn = document.getElementById("restartBtn");
+
+  restartBtn.addEventListener("click", () => {
+
+    answers = Array(questions.length).fill(null);
+
+    for (let key in scores) {
+     scores[key] = 0;
+    }
+
+    currentQuestion = 0;
+
+    document.getElementById("result").classList.add("hidden");
+    document.getElementById("quiz").classList.remove("hidden");
+
+    loadQuestion();
+  });
+
+  loadQuestion();
+</script>
+
+<style>
+body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;}
+
+.container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;}
+
+.intro { 
+      text-align: justify;
+      margin: 0 auto 40px;
+      max-width: 900px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;}
+
+h1 {
+      text-align: center;}
+
+.question {
+      margin-bottom: 20px;
+      font-size: 12px;}
+
+.options label {
+      display: block;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: medium;}
+
+.buttons {
+      display: flex;
+      justify-content: space-between;}
+
+button {
+      padding: 10px 15px;
+      cursor: pointer;}
+
+button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;}
+
+.hidden {
+      display: none;}
+
+.result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #eee;
+      border-radius: 6px;}
+
+#podium {
+  list-style: none;
+  padding: 0;
+}
+
+#podium li {
+  background-color: #f4f4f4;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#podium li:nth-child(1) {
+  background-color: gold;
+}
+
+#podium li:nth-child(2) {
+  background-color: silver;
+}
+
+#podium li:nth-child(3) {
+  background-color: #cd7f32;
+}
+
+.categoryDescriptions{
+text-align: justify;
+}
+
+</style>
+
+<!-- MENU -->
+<div id="accessibility-menu">
+
+    <h3>Acessibilidade</h3>
+
+    <button onclick="changeFontSize(1)">Aumentar texto</button>
+    <button onclick="changeFontSize(-1)">Diminuir texto</button>
+    <button onclick="toggleContrast()">Alto contraste</button>
+    <button onclick="toggleGrayscale()">Escala de cinzentos</button>
+    <button onclick="toggleReadableFont()">Fonte legível</button>
+    <button onclick="readPage()">Narrador</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <!-- COLUNA 1 -->
+        <div class="footer-column">
+            <h3>Popcorn Diaries.</h3>
+            <p style="text-align: justify;">
+                Projeto multimédia que une cinema, criatividade e comunicação, dedicado à análise cinematográfica e à exploração de diferentes ferramentas digitais.
+            </p>
+        </div>
+
+        <!-- COLUNA 2 -->
+        <div class="footer-column">
+            <h3>Redes Sociais</h3>
+            <p>
+                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/popcorndiaries__?igsh=d3pmbnhlYXU3NHZ1"
+                   target="_blank">
+                    @popcorndiaries__
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-brands fa-youtube"></i>
+
+                <a href="https://youtube.com/@popcorndiariesproject?si=hXlB0gcvYZf93ts5"
+                   target="_blank">
+                    @popcorndiariesproject
+                </a>
+            </p>
+            <p> 
+                <i class="fa-brands fa-spotify"></i>
+                <a href="https://open.spotify.com/user/31ylsrlncucxu7nv7bzjlcrqvonq?si=8SZ5fJ6fSLucdKMSXK7K2A"
+                   target="_blank">
+                    @PopcornDiaries
+                </a>
+            </p>
+        </div>
+
+        <!-- COLUNA 3 -->
+        <div class="footer-column">
+            <h3>Contactos</h3>
+            <p>Email: <a id="footer-email" href="mailto:popcorndiaries.project@gmail.com">popcorndiaries.project@gmail.com</a></p>
+            <p>Lisboa, Portugal</p>
+        </div>
+
+        <!-- COLUNA 4 -->
+        <div class="footer-column">
+
+            <h3>Links Rápidos</h3>
+
+            <p><a href="index.html">Início</a></p>
+
+            <p><a href="sobre-nos.html">Sobre Nós</a></p>
+
+            <p><a href="ajuda.html">Ajuda</a></p>
+
+            <p><a href="faq.html">FAQ</a></p>
+        </div>
+    </div>
+
+    <!-- PARTE FINAL -->
+    <div class="footer-bottom">
+
+        © 2026 Popcorn Diaries.
+        Estes conteúdos estão licenciados sob a licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >CC BY-NC-SA 4.0</a>.
+
+        
+    </div>
+</footer>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="script.js"></script>
+</body>
+</html>

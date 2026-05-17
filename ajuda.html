@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logosemfundo.png">
+    <title>Ajuda</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CLAQUETE -->
+<div class="topo-claquete">
+    <img src="img/claquete.PNG" alt="Claquete">
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="index.html" class="logo">
+        <img src="img/logosemfundo.png" alt="Ícone" class="menu-icon">
+    </a>
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+            <ul>
+                <li><a href="galeria-virtual.html">Galerias Virtuais</a></li>
+            <li><a href="ebook.html">E-book</a></li>
+            <li><a href="fotos-videos.html">Fotos e vídeos</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="infograficos.html">Infográficos</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+            </ul>
+</div>
+
+<div class="conteudo">
+
+ <!-- TÍTULO -->
+
+    <section class="galeria-topo">
+        <br>
+        <br>
+        <h1 style="text-align: center;">Precisas de mais informações?</h1>
+
+        <p style="text-align: center;">
+            Se precisares de mais informações ou tiveres dúvidas, não hesites em entrar em contacto connosco. Estamos aqui para ajudar!
+        </p>
+       <br>
+        <p style="text-align: center;">
+            Podes sempre contactar-nos através das redes socias, o nosso email ou o formulário de contacto abaixo. Teremos todo o gosto em responder às tuas perguntas e fornecer-te a assistência necessária.
+        </p>
+
+        <br>
+        <p style="text-align: center;">
+            Temos também uma secção de perguntas frequentes <a href="faq.html" class="lag">(FAQ)</a> onde podes encontrar respostas para as dúvidas mais comuns. Se não encontrares a resposta que procuras, tens sempre outros meios de contacto!
+        </p>
+    </section>
+</div>
+
+    <!-- FORMULÁRIO -->
+
+<div class="contacto">
+
+    <h1>Contacta-nos</h1>
+
+    <form action="https://formsubmit.co/popcorndiaries.project@gmail.com" method="POST">
+
+        <!-- Nome -->
+        <input 
+            type="text" 
+            name="nome" 
+            placeholder="O teu nome"
+            required
+        >
+
+        <!-- Email -->
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="O teu email"
+            required
+        >
+
+        <!-- Mensagem -->
+        <textarea 
+            name="mensagem" 
+            placeholder="Escreve a tua mensagem..."
+            required
+        ></textarea>
+
+        <!-- botão -->
+        <button type="submit">
+            Enviar
+        </button>
+    </form>
+</div>
+
+
+        <!-- MENU -->
+<div id="accessibility-menu">
+
+    <h3>Acessibilidade</h3>
+
+    <button onclick="changeFontSize(1)">Aumentar texto</button>
+    <button onclick="changeFontSize(-1)">Diminuir texto</button>
+    <button onclick="toggleContrast()">Alto contraste</button>
+    <button onclick="toggleGrayscale()">Escala de cinzentos</button>
+    <button onclick="toggleReadableFont()">Fonte legível</button>
+    <button onclick="readPage()">Narrador</button>
+</div>
+
+<br>
+<br>
+<br>
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <!-- COLUNA 1 -->
+        <div class="footer-column">
+            <h3>Popcorn Diaries.</h3>
+            <p style="text-align: justify;">
+                Projeto multimédia que une cinema, criatividade e comunicação, dedicado à análise cinematográfica e à exploração de diferentes ferramentas digitais.
+            </p>
+        </div>
+
+        <!-- COLUNA 2 -->
+        <div class="footer-column">
+            <h3>Redes Sociais</h3>
+            <p>
+                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/popcorndiaries__?igsh=d3pmbnhlYXU3NHZ1"
+                   target="_blank">
+                    @popcorndiaries__
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-brands fa-youtube"></i>
+
+                <a href="https://youtube.com/@popcorndiariesproject?si=hXlB0gcvYZf93ts5"
+                   target="_blank">
+                    @popcorndiariesproject
+                </a>
+            </p>
+            <p> 
+                <i class="fa-brands fa-spotify"></i>
+                <a href="https://open.spotify.com/user/31ylsrlncucxu7nv7bzjlcrqvonq?si=8SZ5fJ6fSLucdKMSXK7K2A"
+                   target="_blank">
+                    @PopcornDiaries
+                </a>
+            </p>
+        </div>
+
+        <!-- COLUNA 3 -->
+        <div class="footer-column">
+            <h3>Contactos</h3>
+            <p>Email: <a id="footer-email" href="mailto:popcorndiaries.project@gmail.com">popcorndiaries.project@gmail.com</a></p>
+            <p>Lisboa, Portugal</p>
+        </div>
+
+        <!-- COLUNA 4 -->
+        <div class="footer-column">
+
+            <h3>Links Rápidos</h3>
+
+            <p><a href="index.html">Início</a></p>
+
+            <p><a href="sobre-nos.html">Sobre Nós</a></p>
+
+            <p><a href="ajuda.html">Ajuda</a></p>
+
+            <p><a href="faq.html">FAQ</a></p>
+        </div>
+    </div>
+
+    <!-- PARTE FINAL -->
+    <div class="footer-bottom">
+
+        © 2026 Popcorn Diaries.
+        Estes conteúdos estão licenciados sob a licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >CC BY-NC-SA 4.0</a>.
+    </div>
+</footer>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="script.js"></script>
+</body>
+</html>

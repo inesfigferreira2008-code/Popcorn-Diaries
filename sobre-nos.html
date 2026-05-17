@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="img/logosemfundo.png">
+    <title>Sobre Nós</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- CLAQUETE -->
+<div class="topo-claquete">
+    <img src="img/claquete.PNG" alt="Claquete">
+</div>
+
+<!-- MENU -->
+<div class="menu">
+    <a href="index.html" class="logo">
+        <img src="img/logosemfundo.png" alt="Ícone" class="menu-icon">
+    </a>
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+            <ul>
+                <li><a href="galeria-virtual.html">Galerias Virtuais</a></li>
+            <li><a href="ebook.html">E-book</a></li>
+            <li><a href="fotos-videos.html">Fotos e vídeos</a></li>
+            <li><a href="podcast.html">Podcast</a></li>
+            <li><a href="infograficos.html">Infográficos</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="sobre-nos.html">Sobre Nós</a></li>
+            <li><a href="ajuda.html">Ajuda</a></li>
+            </ul>
+</div>
+
+<style>
+
+/* =========================
+   GERAL
+========================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* =========================
+   FOTO DE GRUPO
+========================= */
+
+.grupo {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.grupo img {
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.grupo img:hover {
+    transform: scale(1.02);
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h2 {
+    color: #990011;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000001;
+}
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+</style>
+
+
+<!-- FOTO DO GRUPO -->
+<div class="grupo">
+    <img src="img/grupo.jpeg" alt="Nós as três" id="imgGrupo" style="width: 300%; height: 400px; object-fit: cover;">
+</div>
+
+<!-- CARDS -->
+<div class="cards">
+
+    <div class="card">
+        <img src="img/ari.jpeg" id="img1">
+        <div class="card-content">
+            <h2>Ariadna</h2>
+            <p>
+                A Ariadna, também conhecida por Ari, tem 17 anos e cresceu com uma forte ligação ao cinema, especialmente através da família e do contacto com desenhos animados e anime. O seu género favorito é o romance, embora também consuma outros tipos de conteúdos, com destaque para animação japonesa e doramas. Valoriza principalmente as personagens, as suas relações e o impacto emocional das histórias, assim como a estética e a banda sonora. Entre as suas referências estão Haikyuu!! e filmes do Studio Ghibli, como Spirited Away. O cinema e a animação representam para ela uma experiência emocional e nostálgica.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/nes.jpeg" id="img2">
+        <div class="card-content">
+            <h2>Inês</h2>
+            <p>
+                A Inês tem 17 anos e sempre manteve uma relação próxima com o cinema e as séries, integrando-os no seu quotidiano. Vê conteúdos tanto em casa como no cinema, especialmente em estreias. Os seus interesses incluem romance, ficção científica, distopias e drama. Dá especial importância ao desenvolvimento das personagens e ao impacto emocional das histórias, valorizando narrativas complexas e moralmente ambíguas. Entre os seus filmes e séries preferidos estão Fast & Furious, The Hunger Games, Stranger Things, Arcane e Outer Banks. Para a Inês, o mais importante numa obra é a capacidade de provocar emoção e reflexão.
+            </p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/iris.jpeg" id="img3">
+        <div class="card-content">
+            <h2>Íris</h2>
+            <p>
+                A Íris tem 17 anos e é apaixonada por cinema desde a infância, influenciada pelo contacto frequente com filmes da Disney, Pixar e DreamWorks. Esse interesse inicial evoluiu para uma ligação forte ao cinema em geral, incluindo filmes de ação, comédia romântica, distopias e histórias inspiradoras. Gosta particularmente de obras que combinam emoção, humor e narrativa envolvente, valorizando sobretudo a história, as personagens e os "plot twists". Entre os filmes que mais a marcaram estão The Greatest Showman, Jumanji, Legally Blonde e Rush Hour. O cinema é, para ela, uma forma de entretenimento e emoção, com forte ligação ao sentimento de nostalgia e conforto.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <img id="modalImg">
+</div>
+
+<script>
+
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+
+// função para abrir imagem
+function abrir(img) {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+}
+
+// imagem do grupo
+document.getElementById("imgGrupo").onclick = function() {
+    abrir(this);
+};
+
+// imagens individuais
+document.getElementById("img1").onclick = function() {
+    abrir(this);
+};
+
+document.getElementById("img2").onclick = function() {
+    abrir(this);
+};
+
+document.getElementById("img3").onclick = function() {
+    abrir(this);
+};
+
+// fechar modal
+modal.onclick = function() {
+    modal.style.display = "none";
+};
+
+</script>
+
+<!-- MENU -->
+<div id="accessibility-menu">
+
+    <h3>Acessibilidade</h3>
+
+    <button onclick="changeFontSize(1)">Aumentar texto</button>
+    <button onclick="changeFontSize(-1)">Diminuir texto</button>
+    <button onclick="toggleContrast()">Alto contraste</button>
+    <button onclick="toggleGrayscale()">Escala de cinzentos</button>
+    <button onclick="toggleReadableFont()">Fonte legível</button>
+    <button onclick="readPage()">Narrador</button>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="footer-container">
+
+        <!-- COLUNA 1 -->
+        <div class="footer-column">
+            <h3>Popcorn Diaries.</h3>
+            <p style="text-align: justify;">
+                Projeto multimédia que une cinema, criatividade e comunicação, dedicado à análise cinematográfica e à exploração de diferentes ferramentas digitais.
+            </p>
+        </div>
+
+        <!-- COLUNA 2 -->
+        <div class="footer-column">
+            <h3>Redes Sociais</h3>
+            <p>
+                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/popcorndiaries__?igsh=d3pmbnhlYXU3NHZ1"
+                   target="_blank">
+                    @popcorndiaries__
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-brands fa-youtube"></i>
+
+                <a href="https://youtube.com/@popcorndiariesproject?si=hXlB0gcvYZf93ts5"
+                   target="_blank">
+                    @popcorndiariesproject
+                </a>
+            </p>
+            <p> 
+                <i class="fa-brands fa-spotify"></i>
+                <a href="https://open.spotify.com/user/31ylsrlncucxu7nv7bzjlcrqvonq?si=8SZ5fJ6fSLucdKMSXK7K2A"
+                   target="_blank">
+                    @PopcornDiaries
+                </a>
+            </p>
+        </div>
+
+        <!-- COLUNA 3 -->
+        <div class="footer-column">
+            <h3>Contactos</h3>
+            <p>Email: <a id="footer-email" href="mailto:popcorndiaries.project@gmail.com">popcorndiaries.project@gmail.com</a></p>
+            <p>Lisboa, Portugal</p>
+        </div>
+
+        <!-- COLUNA 4 -->
+        <div class="footer-column">
+
+            <h3>Links Rápidos</h3>
+
+            <p><a href="index.html">Início</a></p>
+
+            <p><a href="sobre-nos.html">Sobre Nós</a></p>
+
+            <p><a href="ajuda.html">Ajuda</a></p>
+
+            <p><a href="faq.html">FAQ</a></p>
+        </div>
+    </div>
+
+    <!-- PARTE FINAL -->
+    <div class="footer-bottom">
+
+        © 2026 Popcorn Diaries.
+        Estes conteúdos estão licenciados sob a licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" >CC BY-NC-SA 4.0</a>.
+    </div>
+</footer>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="script.js"></script>
+</body>
+</html>

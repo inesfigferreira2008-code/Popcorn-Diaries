@@ -1,0 +1,38 @@
+﻿.title {
+    position: center;
+}
+
+.imagem {
+    overflow: hidden;
+    border-radius: 6px;
+    width: 100%;
+}
+
+.imagem img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 520px;
+    border-radius: inherit;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.imagem img:hover {
+    transform: scale(1.02);
+}
+
+.container-colunas {
+    display: flex; 
+    gap: 20px;     
+}
+.coluna-esquerda, .coluna-direita {
+    flex: 1; 
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
